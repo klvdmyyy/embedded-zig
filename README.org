@@ -1,0 +1,10 @@
+#+title: Embedded Zig.
+#+author: Klementiev Dmitry
+#+email: klementievd08@yandex.ru
+
+Supports only Atmega328p (AVR).
+
+* Project structure
+
+- source/ :: Kernel source code.
+- build/ :: Zig code for build stage.
