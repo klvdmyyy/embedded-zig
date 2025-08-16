@@ -18,8 +18,12 @@ pub const interrupts = struct {
 
 pub export fn kmain() noreturn {
     uart.init(9600);
-    uart.writeString("Kernel successfully loaded.");
-    while(true) {}
+    uart.writeLine("Kernel successfully loaded.");
+    while(true) {
+        delayCycles(500_000);
+        delayCycles(500_000);
+        @panic("Testing.");
+    }
 }
 
 fn delayCycles(cycles: u32) void {

@@ -27,3 +27,10 @@ pub fn writeByte(byte: u8) void {
 
     regs.USART0.UDR0.* = byte;
 }
+
+pub fn writeLine(s: ?[]const u8) void {
+    if(s) |v| {
+        writeString(v);
+    }
+    writeString("\r\n");
+}

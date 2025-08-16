@@ -124,7 +124,7 @@ fn clear_bss() void {
 pub fn panic(msg: []const u8, error_return_trace: ?*builtin.StackTrace, _: ?usize) noreturn {
     // Currently assumes that the uart is initialized in main().
     uart.writeString("PANIC: ");
-    uart.writeString(msg);
+    uart.writeLine(msg);
 
     // TODO: print stack trace (addresses), which can than be turned into actual source line
     //       numbers on the connected machine.
